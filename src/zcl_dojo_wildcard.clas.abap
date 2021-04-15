@@ -6,7 +6,7 @@ CLASS zcl_dojo_wildcard DEFINITION
   PUBLIC SECTION.
 
     DATA:
-      mt_wildcards TYPE SORTED TABLE OF zdojo_wildcards WITH UNIQUE KEY varbpl narbpl .
+      mt_wildcards TYPE TABLE OF zdojo_wildcards WITH KEY varbpl narbpl .
 
     METHODS check
       IMPORTING
@@ -22,8 +22,9 @@ ENDCLASS.
 
 CLASS zcl_dojo_wildcard IMPLEMENTATION.
 
-
   METHOD check.
+
+    sort mt_wildcards by varbpl DESCENDING narbpl DESCENDING.
 
     LOOP AT mt_wildcards INTO DATA(ls_row).
       IF ls_row-narbpl = iv_varbpl AND ls_row-narbpl = iv_narbpl.
