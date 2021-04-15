@@ -1,2 +1,3 @@
 # wildcard
-Wildcard
+find wildcard entries in a table, from workstations.
+
