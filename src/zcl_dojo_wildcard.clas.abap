@@ -24,6 +24,7 @@ CLASS zcl_dojo_wildcard IMPLEMENTATION.
 
   METHOD check.
 "bugfixing
+"großartige funktionen )))2
     sort mt_wildcards by varbpl DESCENDING narbpl DESCENDING.
 
     LOOP AT mt_wildcards INTO DATA(ls_row).
